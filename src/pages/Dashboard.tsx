@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Plus } from "lucide-react";
 import StatsCards from "@/components/dashboard/StatsCards";
+import ChartCard from "@/components/dashboard/ChartCard";
 import { monthlyData } from "@/data/staticData";
 import { isCurrentMonth } from "@/lib/month";
 
@@ -41,7 +42,9 @@ function Dashboard() {
         </div>
       </div>
       <StatsCards month={currentMonth} />
-      
+      <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <ChartCard />
+      </div>
     </>
   );
 }
