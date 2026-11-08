@@ -3,6 +3,7 @@ import MonthSlider from "@/components/dashboard/MonthSlider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Plus } from "lucide-react";
+import StatsCards from "@/components/dashboard/StatsCards";
 import { monthlyData } from "@/data/staticData";
 import { isCurrentMonth } from "@/lib/month";
 
@@ -17,6 +18,7 @@ function Dashboard() {
       <div className="flex items-center justify-between">
         <div className="flex flex-col items-center gap-1">
           <span className="text-foreground text-md font-medium">{year}</span>
+
           <div className="flex flex-col items-center gap-2 lg:relative lg:block">
             <MonthSlider value={currentMonth} onChange={setCurrentMonth} />
 
@@ -38,7 +40,8 @@ function Dashboard() {
           </Button>
         </div>
       </div>
-     
+      <StatsCards month={currentMonth} />
+      
     </>
   );
 }
